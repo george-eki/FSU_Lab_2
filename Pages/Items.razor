@@ -1,0 +1,37 @@
+﻿@page "/Items"
+@using Lab_2.Data;
+@using Lab_2.Models;
+@inject ItemService itemservice
+<h3>Items</h3>
+<div>
+@if (itemsList == null)
+{
+    <p><em>Loading items...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Manufacturer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in itemsList)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Price</td>
+                    <td>@item.Description</td>
+                    <td>@item.Manufacturer</td>
+                    <td><a href="EditItem/@item.Id">Edit Item</a></td>
+                        <button class="btn btn-info" @onclick="() => itemservice.DeleteItem(item)">Delete</button>
+                    </tr>
+        }
+        </tbody>
+    </table>
+}
+</div>

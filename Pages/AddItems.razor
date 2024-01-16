@@ -1,0 +1,39 @@
+﻿@page "/AddItems"
+@using Lab_2.Data;
+@using Lab_2.Models;
+@inject ItemService itemService
+@inject NavigationManager NavigationManager
+
+<h3>AddItems</h3>
+<div>
+    <form>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="Name" class="control-label"> Name</label>
+                    <input for="Name" class="form-control" @bind="@_item.Title" />
+                </div>
+                <div class="form-group">
+                    <label for="Description" class="control-label"> Description</label>
+                    <input for="Description" class="form-control" @bind="@_item.Description" />
+                </div>
+                <div class="form-group">
+                    <label for="Price" class="control-label"> Price</label>
+                    <input for="Price" class="form-control" @bind="@_item.Price" />
+                </div>
+                <div class="form-group">
+                    <label for="Price" class="control-label"> Price</label>
+                    <input for="Price" class="form-control" @bind="@_item.Manufacturer" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="button" class="btn btn-primary" @onclick="@AddNewItem" value="Save Item" />
+                    <input type="button" class="btn btn-primary" @onclick="@Cancel" value="Cancel" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+﻿@page "/DeleteItems/{Id}"
+@using Lab_2.Data
+@using Lab_2.Models
+@inject ItemService itemService
+@inject NavigationManager NavigationManager
+
+<h2>Delete Destination</h2>
+<hr />
+<h3>Are you sure want to delete this?</h3>
+
+<form>
+    <div class="row">
+        <div class=" col-md-8">
+            <div class="form-group">
+                <label>Item Id:</label>
+                <label>@_item.Id</label>
+            </div>
+            <div class="form-group">
+                <label>Name:</label>
+                <label>@_item.Title</label>
+            </div>
+            <div class="form-group">
+                <label>Descrition:</label>
+                <label>@_item.Description</label>
+            </div>
+            <div class="form-group">
+                <label>Price:</label>
+                <label>@_item.Price</label>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-danger" @onclick="@DeleteItem" value="Delete" />
+                <input type="button" class="btn btn-primary" @onclick="@Cancel" value="Cancel" />
+            </div>
+        </div>
+    </div>
+</form>
