@@ -1,5 +1,6 @@
 ﻿using Lab_2.Models;
 using Microsoft.AspNetCore.Components;
+using static Lab_2.Pages.DeleteItems;
 
 namespace Lab_2.Pages
 {

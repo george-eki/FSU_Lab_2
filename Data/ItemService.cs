@@ -46,21 +46,11 @@ namespace Lab_2.Data
             return true;
 
         }
-        //public async Task DeleteItem(Item item)
-        //{
-        //    _context.Items.Remove(item);
-        //    await _context.SaveChangesAsync();
-        //    ReloadPage();
-        //}
-        public async Task<bool> DeleteItem(Item item)
+        public async Task DeleteItem(Item item)
         {
             _context.Items.Remove(item);
-            await _context.SaveChangesAsync(true);
-            return true;
-        }
-        public static void ReloadPage(this NavigationManager manager)
-        {
-            manager.NavigateTo(manager.Uri, true);
+            await _context.SaveChangesAsync();
+            
         }
     }
 }
